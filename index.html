@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Churn Predictor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='churn_rate.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Churn Predictor</span></h2>
+            <div class='description'>
+    			<p> Machine Learning Application</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">
+                <input class="form-input" type="text" name="gender" placeholder="Male=1,Female=0"><br>
+                <input class="form-input" type="text" name="SeniorCitizen" placeholder="No=0, Yes=1"><br>
+                <input class="form-input" type="text" name="Partner" placeholder="No=0, Yes=1"><br>
+                <input class="form-input" type="text" name="Dependents" placeholder="No=0, Yes=1"><br>
+                <input class="form-input" type="text" name="PhoneService" placeholder="No=0, Yes=1"><br>
+                <input class="form-input" type="text" name="MultipleLines" placeholder="No=0,No phone service=1, Yes=2"><br>
+                <input class="form-input" type="text" name="InternetService" placeholder="Fiber optic=1,DSL=0, No=2"><br>
+                <input class="form-input" type="text" name="OnlineSecurity" placeholder="No=0,No Internet service=1, Yes=2"><br>
+                <input class="form-input" type="text" name="OnlineBackup" placeholder="No=0,No Internet service=1, Yes=2"><br>
+                <input class="form-input" type="text" name="DeviceProtection" placeholder="No=0,No Internet service=1, Yes=2"><br>
+                <input class="form-input" type="text" name="TechSupport" placeholder="No=0,No Internet service=1, Yes=2"><br>
+                <input class="form-input" type="text" name="StreamingTV" placeholder="No=0,No Internet service=1, Yes=2"><br>
+                <input class="form-input" type="text" name="StreamingMovies" placeholder="No=0,No Internet service=1, Yes=2"><br>
+                <input class="form-input" type="text" name="Contract" placeholder="Monthly=0,One_Year=1, Twpo_Year=2"><br>
+                <input class="form-input" type="text" name="PaperlessBilling" placeholder="No=0,Yes=1"><br>
+                <input class="form-input" type="text" name="PaymentMethod" placeholder="No=0,Yes=1"><br>
+                <input class="form-input" type="text" name="PaperlessBilling" placeholder="Electronic check=2,Mailed check=3,Bank transfer=0,credit card=1"><br>
+                <input class="form-input" type="text" name="MonthlyCharges" placeholder="eg. 1000.00"><br>
+                <input class="form-input" type="text" name="TotalCharges" placeholder="eg. 1000.00"><br>
+
+        		<input type="submit" class="my-cta-button" value="Predict">
+        	</form>
+    	</div>
+
+
+    </body>
+</html>
